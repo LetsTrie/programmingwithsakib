@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/vendorTop'); %>
+    <link rel="stylesheet" href="/index.css" />
+    <title>The Complete JavaScript Bootcamp</title>
+
+    <style>
+      body {
+        min-height: 100vh;
+        background: linear-gradient(to right bottom, #fb8880, #f48982);
+      }
+
+      .wrapper {
+        width: 100%;
+        margin: 0vw auto;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <%- include('partials/navbar'); %>
+      <div class="affiliate">
+        <h1>Redirecting to MSB Academy...</h1>
+
+        <div class="spinner">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+          <div class="bounce4"></div>
+        </div>
+
+        <h4>Use Coupon Code <span> PWS25 </span> to get 25% discount!</h4>
+      </div>
+    </div>
+  </body>
+  <script>
+    setTimeout(() => {
+      let LINK =
+        'https://www.msbacademy.com/course/javascript-bootcamp/ref/808/?campaign=jsforlife';
+      window.location = LINK;
+    }, 5000);
+  </script>
+  <%- include('partials/vendorBottom'); %>
+</html>

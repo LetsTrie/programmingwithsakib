@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/vendorTop'); %>
+    <link rel="stylesheet" href="/index.css" />
+    <title>JS Programming Challenges | PWS</title>
+  </head>
+  <body>
+    <div class="proSakib">
+      <%- include('partials/navbar'); %>
+      <article class="challenges">
+        <div class="heading">
+          <h2 class="heading-text">Programming Challenges</h2>
+
+          <h4>
+            Level up your coding skill with lots of programming challenges with
+            Modern ES6 JavaScript.
+          </h4>
+        </div>
+
+        <div class="questionAnswerList">
+          <% data.forEach((qa, i) => { %>
+          <div class="questionAnswer">
+            <div class="question">
+              <p>
+                <span><%= `${((currentPage - 1) * limit) + (i + 1)}.` %></span>
+                <%- qa.question %>
+              </p>
+            </div>
+
+            <div class="answer">
+              <% qa.way.forEach((w, j) => { %>
+              <div class="way">
+                <% if(qa.way.length > 1) { %>
+                <div class="wayHeading">
+                  <h3>Way <%=w.id%></h3>
+                </div>
+                <% } %>
+                <div class="wayDescription">
+                  <p><%- w.sol_desc %></p>
+                  <div class="spacing"></div>
+
+                  <code>
+                    <script src="<%= w.sol_code %>"></script>
+                  </code>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+            <% if(data.length - 1 !== i) { %>
+            <hr />
+            <% } %>
+          </div>
+          <% }) %>
+        </div>
+        <%- include('partials/pagination'); %>
+        <div class="poster">
+          <div class="poster-info">
+            <div class="poster-header">
+              <h2>The Complete JavaScript Bootcamp</h2>
+            </div>
+            <div class="poster-info-desc">
+              <p>
+                Learn Modern JavaScript from the very beginning - all the way up
+                to JS Expert level with lots of programming challenges and real
+                world projects in Bangla
+              </p>
+            </div>
+            <p class="disqus_URL" hidden><%=disqus_URL%></p>
+            <p class="disqus_IDENTIFIER" hidden><%=disqus_IDENTIFIER%></p>
+            <div class="enroll">
+              <a
+                href="https://www.msbacademy.com/course/javascript-bootcamp/ref/808/?campaign=jsforlife"
+                target="_blank"
+              >
+                <i class="fa fa-shopping-cart"></i>&nbsp; Enroll Now!</a
+              >
+            </div>
+
+            <div class="discount">
+              <p>Use Coupon Code <b>PWS25</b> to get 25% discount!</p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="disqus_custom_style">
+        <div id="disqus_thread"></div>
+      </div>
+      <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        var disqus_config = function () {
+          this.page.url = document.querySelector('.disqus_URL').innerText; // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = document.querySelector(
+            '.disqus_IDENTIFIER'
+          ).innerText; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function () {
+          // DON'T EDIT BELOW THIS LINE
+          var d = document,
+            s = d.createElement('script');
+          s.src = 'https://programmingwithsakib.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    </div>
+    <script
+      id="dsq-count-scr"
+      src="//programmingwithsakib.disqus.com/count.js"
+      async
+    ></script>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f68e7b3ce4503bf"
+    ></script>
+  </body>
+  <%- include('partials/vendorBottom'); %>
+</html>

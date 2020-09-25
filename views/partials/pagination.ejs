@@ -1,0 +1,44 @@
+<div class="pagination_wrapper">
+  <div class="pagination">
+
+    <% if(hasPreviousPage) { %>
+    <a href="<%=url%>?page=<%=previousPage%>">Previous</a>
+    <% } else { %>
+    <a href="javascript:void(0)">Previous</a>
+    <% } %>
+
+    <% if(lastPage <= 5) { %>
+      <% for(let pageNo = 1; pageNo <= lastPage; pageNo++) { %>
+        <a href="<%=url%>?page=<%=pageNo%>" class="<%= currentPage === pageNo ? 'active': '' %>"><%=pageNo%></a>
+      <% } %>
+    <% } else {  %>
+      <a href="<%=url%>?page=1" class="<%= currentPage === 1 ? 'active': '' %>">1</a>
+      
+      <% if(currentPage <= 2) { %>
+        <a href="<%=url%>?page=2" class="<%= currentPage === 2 ? 'active': '' %>">2</a>
+      <% } else { %>
+        <a href="javascript:void(0)">...</a>
+      <% } %>
+
+      <% if(currentPage >= 3 && currentPage <= lastPage - 2) { %>
+        <a href="<%=url%>?page=<%=currentPage%>" class="active"><%=currentPage%></a>
+      <% } else { %>
+        <a href="javascript:void(0)">...</a>
+      <% } %>
+
+      <% if(currentPage >= lastPage - 1) { %>
+        <a href="<%=url%>?page=<%=lastPage - 1%>" class="<%= currentPage === lastPage - 1 ? 'active': '' %>"><%=lastPage - 1%></a>
+      <% } else { %>
+        <a href="javascript:void(0)">...</a>
+      <% } %>
+
+      <a href="<%=url%>?page=<%=lastPage%>" class="<%= currentPage === lastPage ? 'active': '' %>"><%=lastPage%></a>
+    <% } %>
+
+    <% if(hasNextPage) { %>
+    <a href="/?page=<%=nextPage%>">Next</a>
+    <% } else { %>
+    <a href="javascript:void(0)">Next</a>
+    <% } %>
+  </div>
+</div>

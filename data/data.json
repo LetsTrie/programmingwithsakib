@@ -1,0 +1,235 @@
+[
+  {
+    "id": "1",
+    "question": "একটি Array তে থাকা সংখ্যাগুলোর যোগফল নির্ণয় করতে হবে! (Calculate the sum of an array of numbers)",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "আমরা প্রথমে একটি Variable নিবো (Suppose, <b>Sum = 0</b>)। এবং আমরা Loop এর মাধ্যমে Array এর প্রতিটি সংখ্যা, এই Sum Variable এর সাথে যোগ করে দিবো। তাহলেই আমরা যোগফলটা পেয়ে যাবো।",
+        "sol_code": "https://gist.github.com/LetsTrie/0715c22137e344237b27a20b4a00bec0.js"
+      },
+      {
+        "id": "2",
+        "sol_desc": "আমরা চাইলে Array Method: Reduce ব্যবহার করে, এক লাইনে এই যোগফলটি নির্ণয় করতে পারি।",
+        "sol_code": "https://gist.github.com/LetsTrie/ba23329694ebdefdc7480177e4a38ea4.js"
+      },
+      {
+        "id": "3",
+        "sol_desc": "আমরা Way 2 কে <b>Array Object</b> এর একটি Prototype হিসেবেও লিখতে পারি।",
+        "sol_code": "https://gist.github.com/LetsTrie/e1bbb2086c7445185d3f70eef300191d.js"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "question": "একটি Array তে একটি নির্দিষ্ট value কতবার রয়েছে তা নির্ণয় কর! (Count the number of occurrences of a value in an array) <b>[Only Primitive Types]</b>",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "আমরা প্রথমে একটি Variable নিবো (Count = 0)। তারপর loop এর মাধ্যমে Array এর প্রতিটা Element check করে দেখবো যে, কোন Element, এই নির্দিষ্ট Value এর সমান কিনা, সমান হলে আমরা Count এর মান এক এক করে বাড়িয়ে দিবো (+1)। এই Count এর Value ই হচ্ছে Solution।",
+        "sol_code": "https://gist.github.com/LetsTrie/aa7f69a1d6fba893a556567e28ede467.js"
+      },
+      {
+        "id": "2",
+        "sol_desc": "আমরা Array Method: Filter এর মাধ্যমে যেসব Element এই নির্দিষ্ট value এর সমান, তাদেরকে আলাদা করে নিয়ে আসতে পারি। এই Filtered Array এর Length ই হচ্ছে Solution।",
+        "sol_code": "https://gist.github.com/LetsTrie/02f4203f6002566b4f92e8c37622adc2.js"
+      },
+      {
+        "id": "3",
+        "sol_desc": "আমরা Way 1 এ যে পদ্ধতিতে Occurrences নির্ণয় করেছি, ঠিক সেভাবেই Array Method: Reduce ব্যবহার করে 1 Line এ Solution বের করতে পারি। (Line 5)",
+        "sol_code": "https://gist.github.com/LetsTrie/90526f97bbb2d3d25fa3efa111f24b30.js"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "question": "দুটো Variable এর Value Swap করতে হবে! (Swap two variables)",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "প্রথমে আমরা একটি variable ধরে নিবো (Suppose, <b>Temp</b>). Then, এই Temp এর ভিতরে আমরা প্রথম variable এর মানটি Store করবো। তারপর প্রথম variable এর ভিতরে, দ্বিতীয় variable এর মানটি দিয়ে দিবো এবং শেষে, দ্বিতীয় variable এর ভিতরে সেই Temp এ রেখে দেয়া ভ্যালু টা দিয়ে দিবো। তাহলেই Swap হয়ে যাবে।",
+        "sol_code": "https://gist.github.com/LetsTrie/d1e558b418b3d473f0598d6c763d53e9.js"
+      },
+      {
+        "id": "2",
+        "sol_desc": "আমরা Array destructuring এর মাধ্যমে একটু Trickier way তে দুটো variable swap করতে পারি।",
+        "sol_code": "https://gist.github.com/LetsTrie/942133f83645dabff689b85c5e514175.js"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "question": "দুটি Array সংযুক্ত করতে হবে, এক্ষেত্রে একই element বার বার থাকতে পারে! (Merge two arrays with duplicates)",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "আমরা Array Method: Concat ব্যবহার করে খুব সহজে দুটি Array সংযুক্ত করতে পারি।",
+        "sol_code": "https://gist.github.com/LetsTrie/a4aa4a2bae2b7eb4a994613f8eede3ef.js"
+      },
+      {
+        "id": "2",
+        "sol_desc": "আমরা Spread Operator ব্যবহার করে খুব সহজে দুটি Array সংযুক্ত করতে পারি। এক্ষেত্রে আমরা Array দুটোর Elements গুলো আলাদা করে নতুন একটি Array তে বসিয়ে দিচ্ছি।",
+        "sol_code": "https://gist.github.com/LetsTrie/bc0f9761f7b99e75051788058e99b0c4.js"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "question": "দুটি Array সংযুক্ত করতে হবে, এক্ষেত্রে একই element বার বার থাকতে পারবে না! (Merge two arrays without  duplicates)",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "আমরা Challenge 4 (Way 1) এ যেভাবে করেছিলাম সেভাবেই করবো এবং পুরোটাকে একটা Set এর ভিতরে রাখবো। কারণ আমরা জানি, Set এ Duplicate value রাখা যায় না।",
+        "sol_code": "https://gist.github.com/LetsTrie/e3af188d16e047f46f0de5ef7a8c664c.js"
+      },
+      {
+        "id": "2",
+        "sol_desc": " আমরা Challenge 4 (Way 2) থেকে পাওয়া Merged Array কেও একই ভাবে Set এর ভিতরে রাখি।",
+        "sol_code": "https://gist.github.com/LetsTrie/b747f5c9ac9a142040120ef091a9fe4d.js"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "question": "একটি Number এর Array Sort করতে হবে! (Sort an array of numbers)",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "যেহেতু Sort Function, Array Elements গুলোকে প্রথমে String এ পরিণত করে নেয়, এই কারণে আমাদেরকে Number এর Array Sort এর ক্ষেত্রে Compare Function লিখতে হবে। এই Compare Function, Array এর প্রতি দুইটা Element কে Compare করবে. <br /> ধরুন আমরা সংখ্যাগুলোকে Ascending Order এ সাজাতে চাচ্ছি, তাহলে আমরা check করবো প্রথম সংখ্যাটি দ্বিতীয় সংখ্যা থেকে ছোট কিনা। যদি প্রথম সংখ্যাটি ছোট না হয়, তারমানে আমাদের ordering টা ঠিক নেই. আমাদেরকে এই দুটো সংখ্যা Swap করে Ordering টা ঠিক করতে হবে. <br /> এখন প্রথম নম্বরটি (a) দ্বিতীয় নম্বর (b) থেকে বড় হলে এদের বিয়োগফল (a - b) অবশ্যই ধনাত্মক হবে এবং এই Compare Function ধনাত্মক ভ্যালু রিটার্ন করলে, সংখ্যা দুটি Swap হয়ে যাবে। এভাবে Compare Function এর মাধ্যমে প্রতি দুইটি সংখ্যা compare করে আমরা এদের Ordering ঠিক করতে করতে একসময় Sorted Array পেয়ে যাবো. <br /> একইভাবে, আমরা Descending Order এ সাজানোর ক্ষেত্রে দেখবো (b - a) ধনাত্মক কিনা.",
+        "sol_code": "https://gist.github.com/LetsTrie/07c26c226f5472ddb3848cfcf28edb73.js"
+      },
+      {
+        "id": "2",
+        "sol_desc": "আমরা Ascending Order এ Sort হওয়া Array এর উপর reverse() method apply করে Array কে Descending Order এ Sort করতে পারি.",
+        "sol_code": "https://gist.github.com/LetsTrie/1779abb6417f3ba1b12d8dcaa508586b.js"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "question": "একটি স্ট্রিং এর প্রথম ক্যারেক্টারকে Upper Case এ পরিণত করতে হবে। (Capitalize the First character of a String)",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "আমরা প্রথমে স্ট্রিং এর 0th index এ থাকা ক্যারেক্টারকে Upper Case এ পরিণত করবো। এরপর বাকি অংশ String Method: Slice / Substr / Substring এর মাধ্যমে আলাদা করে সংযুক্ত করে দিবো।  <br> <b>Note:</b> Bracket Notation <b>[]</b> এর পরিবর্তে charAt() ব্যবহার করা উচিত। কারণ Empty String এর ক্ষেত্রে str.charAt(0) থেকে আমরা একটি empty String (‘’) পাবো যেখানে str[0] আমাদের Undefined রিটার্ন করবে।",
+        "sol_code": "https://gist.github.com/LetsTrie/d7f5fd9d4bbf62f832225722dfa92bd4.js"
+      },
+      {
+        "id": "2",
+        "sol_desc": " আমরা চাইলে <b>String Object</b> এর Prototype হিসেবে এই Function টা দিয়ে দিতে পারি।",
+        "sol_code": "https://gist.github.com/LetsTrie/d160fd9877775ee73f424304c16cb633.js"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "question": "একটি স্ট্রিং এর প্রতিটি word এর প্রথম ক্যারেক্টারকে Upper Case এ পরিণত করতে হবে। (Capitalize the First character of each word of a String)",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "আমরা প্রথমে String Method: Split ব্যবহার করে Word গুলোকে আলাদা করে নিয়ে আসবো, তারপর প্রতিটি Word এর প্রথম ক্যারেক্টারকে আমরা আগের মত করে Capitalize করবো। প্রতিটি Word এর প্রথম ক্যারেক্টার Upper Case করা হয়ে গেলে আমরা Array Method: Join এর মাধ্যমে Join করে পুনরায় স্ট্রিং এ পরিনত করবো।",
+        "sol_code": "https://gist.github.com/LetsTrie/b3f47f88c5c6d620a5f32609b2f4f051.js"
+      },
+      {
+        "id": "2",
+        "sol_desc": " আমরা চাইলে <b>ES6 Feature: Map</b> এর মাধ্যমে Chaining করে এই কাজটা এক লাইনে করে ফেলতে পারি। ",
+        "sol_code": "https://gist.github.com/LetsTrie/0cf986ae4a54667ea3525b467bcda958.js"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "question": "একটি Array কে Empty করতে হবে। (How to empty an array!)",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "আমরা Array length এর মান শূন্য করে দিলে Array টি Empty হয়ে যাবে।",
+        "sol_code": "https://gist.github.com/LetsTrie/d19c076771b778d90280771bfba53a22.js"
+      },
+      {
+        "id": "2",
+        "sol_desc": "আমরা Array Method: Splice ব্যবহার করে Array কে Empty করতে পারি।",
+        "sol_code": "https://gist.github.com/LetsTrie/1348cd8072b24a527ebdf95eb9be57a3.js"
+      },
+      {
+        "id": "3",
+        "sol_desc": "আমরা লুপ ব্যবহার করে Array এর শুরু থেকে (Shift Method এর মাধ্যমে) অথবা শেষ থেকে (Pop Method এর মাধ্যমে) একটি একটি করে Element Remove করে, Array কে Empty করতে পারি।",
+        "sol_code": "https://gist.github.com/LetsTrie/6ef63c245243f6ad51e6d04c1e440654.js"
+      },
+      {
+        "id": "4",
+        "sol_desc": "আমরা চাইলে নতুন একটি Empty Array Assign করে দিতে পারি। <br> <b> Note: </b> এক্ষেত্রে Array টি অবশ্যই let বা var keyword এর মাধ্যমে ডিক্লেয়ার করতে হবে কারণ আমরা এখানে Reassign করতেছি। Const ব্যবহার করা যাবে না।",
+        "sol_code": "https://gist.github.com/LetsTrie/8cb4e0021d32d7acd7febd332a02ce20.js"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "question": "একটি স্ট্রিং কে Reverse করতে হবে। (How to reverse a string!)",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "আমরা প্রথমে নতুন একটি Empty String নিবো। এবং লুপের মাধ্যমে আমাদের প্রধান স্ট্রিং এর শেষ থেকে, একে একে প্রতিটি Character, আমাদের নতুন স্ট্রিং এর সাথে সংযুক্ত করে দিবো। তাহলে আমরা মূল স্ট্রিং এর একটি Reversed Order পাবো।",
+        "sol_code": "https://gist.github.com/LetsTrie/8dff92814585df9ba2f92ac075630cde.js"
+      },
+      {
+        "id": "2",
+        "sol_desc": "যেহেতু জাভাস্ক্রিপ্টে স্ট্রিং Immutable, তাই আমরা স্ট্রিং কে সরাসরি reverse করতে পারি না। আমরা প্রথমে এই স্ট্রিং কে Array তে পরিণত করবো, তারপর সেই Array কে reverse করবো এবং শেষে সেই Array কে Join করে স্ট্রিং এ পরিণত করবো। <br> <b> Note:</b> আমরা স্ট্রিং কে Array তে বিভিন্ন উপায়ে তৈরি করতে পারি। যেমনঃ Array.from(str) অথবা [...str] অথবা str.split('') ইত্যাদি।",
+        "sol_code": "https://gist.github.com/LetsTrie/8e87da43f061eac4a36f832223ef468e.js"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "question": "সম্পূর্ণ স্ট্রিং কে Reverse না করে, একটি স্ট্রিং এর প্রতিটি word কে Reverse করতে হবে। (Reverse each word of a string!)",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "আমরা প্রথমে স্ট্রিং থেকে Word গুলোকে আলাদা করে নিবো। যেহেতু প্রতিটি Word ও একেকটি স্ট্রিং, তাই আমরা আগের প্রবলেমের ফাংশনটি ব্যবহার করে প্রতিটি word কে Reverse করতে পারি। এরপর আমরা সকল Reverse হওয়া Word গুলোকে join করে দিবো।",
+        "sol_code": "https://gist.github.com/LetsTrie/3726780d84932633b2b7cf5658d44b1b.js"
+      },
+      {
+        "id": "2",
+        "sol_desc": "আমরা চাইলে For Loop এর পরিবর্তে Array Method: Map নিয়ে কাজ করতে পারি।",
+        "sol_code": "https://gist.github.com/LetsTrie/3b450ca8aff5a140ed656c7a8763523c.js"
+      },
+      {
+        "id": "3",
+        "sol_desc": "এবার আমরা পুরো কাজটি Chaining এর মাধ্যমে এক লাইনে করে ফেলি।",
+        "sol_code": "https://gist.github.com/LetsTrie/e06071ee504ac777cbaf2e45fc228512.js"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "question": "একটি স্ট্রিং এর মধ্যে থেকে Longest word টা খুজে বের করতে হবে। (Find the Longest Word in a String!)",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "আমরা প্রথমে স্ট্রিং থেকে word গুলো আলাদা করে নিবো। (For Simplicity, আমি ধরে নিচ্ছি word গুলো Space Separated, তাই আমরা Split Method এর মাধ্যমে word গুলো আলাদা করবো।) এরপর প্রতিটি word এর length check করবো। যে word এর length সবচেয়ে বড়, সেটাই  Solution।",
+        "sol_code": "https://gist.github.com/LetsTrie/93b0b47a29daa37d58a5c833b80a9385.js"
+      },
+      {
+        "id": "2",
+        "sol_desc": "আমরা Reduce Method ব্যবহার করে, Chaining এর মাধ্যমে, কাজটা এক লাইনে করে ফেলতে পারি। আপনি Reduce Method বুঝে থাকলে অবশ্যই বুঝতে পারবেন, আমরা Way 1 এ যে কাজটি করেছি, এখানে সেটাকে Ternary Operator এর মাধ্যমে Reduce Method এর ভিতরে লিখেছি। দুটো কোড একইভাবে কাজ করছে।",
+        "sol_code": "https://gist.github.com/LetsTrie/e78a0553363daaa6817a129da32dbccb.js"
+      },
+      {
+        "id": "3",
+        "sol_desc": "আমরা Word গুলোকে Descending Order এ (অর্থাৎ বড় থেকে ছোট সজ্জায়) Sort করে নিবো।  তাহলে Sorted Array এর প্রথম Element ই হবে Longest Word.",
+        "sol_code": "https://gist.github.com/LetsTrie/e3452893e0f8136957b5cdceaa409653.js"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "question": "একটি স্ট্রিং এ সর্বাধিক সংখ্যকবার থাকা Word টি খুজে বের কর। (Find the most repeated word in a string!)",
+    "way": [
+      {
+        "id": "1",
+        "sol_desc": "আমরা প্রথমে স্ট্রিং থেকে Word গুলো আলাদা করে ফেলবো। এরপর একটি Object কে ম্যাপ হিসেবে নিয়ে প্রতিটি word কতবার রয়েছে সেটি Count করবো। যে Word টি সর্বাধিক সংখ্যকবার রয়েছে, সেটিই আমাদের Solution । <br> <b>Note:</b> <br> (i) স্ট্রিং থেকে Word গুলো আলাদা করার ক্ষেত্রে, আমরা Split method ব্যবহার না করে, Regular Expression ব্যবহার করার চেষ্টা করবো। উদাহারণস্বরূপ, এই স্ট্রিং ('How do you do?') কে Split(' ') এর মাধ্যমে আলাদা করলে, শেষ word টা এরকম আসবে (‘do?’) । যেখানে আমরা regular expression ব্যবহার করে (/\\w+/g) প্রতিটি Word, সুন্দর ভাবে আলাদা করে নিয়ে আসতে পারি।  <br>(ii) আপনারা চাইলে Map Data Structure ও ব্যবহার করতে পারেন। <br>(iii) একটি লুপের মাধ্যমেও এই কাজটি করা সম্ভব। চেষ্টা করে দেখুন। ",
+        "sol_code": "https://gist.github.com/LetsTrie/9aed11083b48f33e473033a7225cc039.js"
+      }
+    ]
+  }
+]
