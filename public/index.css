@@ -73,6 +73,181 @@ body {
   }
 }
 
+.navbar-light .navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar {
+  font-size: 1.6rem;
+  background: white;
+  padding: 0rem 0rem;
+}
+
+.navbar svg {
+  height: 25px;
+  width: 25px;
+  margin: 4px 8px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.navbar li:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.navbar.navbar-light .navbar-brand {
+  letter-spacing: 2px;
+  font-size: 3.2rem;
+  font-family: 'Yeseva One', cursive;
+  color: #2b2e4a;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.navbar.navbar-light .navbar-brand span {
+  color: #ff2e63;
+}
+
+.navbar .navbar-toggler {
+  font-size: 2rem;
+}
+
+.navbar .navbar-toggler-icon {
+  font-size: 2rem;
+}
+
+.navbar.navbar-light .navbar-nav .nav-link {
+  color: #414141;
+}
+
+.navbar.navbar-light .navbar-nav .active .nav-link {
+  color: black;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item {
+  padding: 1.6rem 0;
+}
+
+@media (max-width: 768px) {
+  .navbar.navbar-light .navbar-nav .nav-item {
+    padding: 1rem 0;
+  }
+  .navbar.navbar-light .navbar-nav .nav-item:last-child {
+    padding-bottom: 2rem;
+  }
+}
+
+.navbar.navbar-light .navbar-nav .nav-item a {
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item.active {
+  color: black;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item:hover a {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .navbar.navbar-light .navbar-nav .nav-item:hover a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    background-color: #f48a82ec;
+    display: block;
+    text-align: center;
+  }
+}
+
+.spinner {
+  width: 1200px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 20px;
+  height: 20px;
+  margin-right: 1.3rem;
+  background-color: white;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+       -o-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+          animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.48s;
+       -o-animation-delay: -0.48s;
+          animation-delay: -0.48s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.32s;
+       -o-animation-delay: -0.32s;
+          animation-delay: -0.32s;
+}
+
+.spinner .bounce3 {
+  -webkit-animation-delay: -0.16s;
+       -o-animation-delay: -0.16s;
+          animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-o-keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -o-transform: scale(0);
+       transform: scale(0);
+  }
+  40% {
+    -o-transform: scale(1);
+       transform: scale(1);
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+         -o-transform: scale(0);
+            transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 .challenges {
   padding-bottom: 3rem;
 }
@@ -613,181 +788,6 @@ hr {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-
-.navbar-light .navbar-toggler {
-  border: none;
-  outline: none;
-}
-
-.navbar {
-  font-size: 1.6rem;
-  background: white;
-  padding: 0rem 0rem;
-}
-
-.navbar svg {
-  height: 25px;
-  width: 25px;
-  margin: 4px 8px;
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    padding: 1rem 1.5rem;
-  }
-}
-
-.navbar li:not(:last-child) {
-  margin-right: 2rem;
-}
-
-.navbar.navbar-light .navbar-brand {
-  letter-spacing: 2px;
-  font-size: 3.2rem;
-  font-family: 'Yeseva One', cursive;
-  color: #2b2e4a;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.navbar.navbar-light .navbar-brand span {
-  color: #ff2e63;
-}
-
-.navbar .navbar-toggler {
-  font-size: 2rem;
-}
-
-.navbar .navbar-toggler-icon {
-  font-size: 2rem;
-}
-
-.navbar.navbar-light .navbar-nav .nav-link {
-  color: #414141;
-}
-
-.navbar.navbar-light .navbar-nav .active .nav-link {
-  color: black;
-}
-
-.navbar.navbar-light .navbar-nav .nav-item {
-  padding: 1.6rem 0;
-}
-
-@media (max-width: 768px) {
-  .navbar.navbar-light .navbar-nav .nav-item {
-    padding: 1rem 0;
-  }
-  .navbar.navbar-light .navbar-nav .nav-item:last-child {
-    padding-bottom: 2rem;
-  }
-}
-
-.navbar.navbar-light .navbar-nav .nav-item a {
-  -webkit-transition: color 0.2s;
-  -o-transition: color 0.2s;
-  transition: color 0.2s;
-}
-
-.navbar.navbar-light .navbar-nav .nav-item.active {
-  color: black;
-}
-
-.navbar.navbar-light .navbar-nav .nav-item:hover a {
-  position: relative;
-}
-
-@media (min-width: 768px) {
-  .navbar.navbar-light .navbar-nav .nav-item:hover a:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 4px;
-    background-color: #f48a82ec;
-    display: block;
-    text-align: center;
-  }
-}
-
-.spinner {
-  width: 1200px;
-  text-align: center;
-}
-
-.spinner > div {
-  width: 20px;
-  height: 20px;
-  margin-right: 1.3rem;
-  background-color: white;
-  border-radius: 100%;
-  display: inline-block;
-  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-       -o-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-          animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-}
-
-.spinner .bounce1 {
-  -webkit-animation-delay: -0.48s;
-       -o-animation-delay: -0.48s;
-          animation-delay: -0.48s;
-}
-
-.spinner .bounce2 {
-  -webkit-animation-delay: -0.32s;
-       -o-animation-delay: -0.32s;
-          animation-delay: -0.32s;
-}
-
-.spinner .bounce3 {
-  -webkit-animation-delay: -0.16s;
-       -o-animation-delay: -0.16s;
-          animation-delay: -0.16s;
-}
-
-@-webkit-keyframes sk-bouncedelay {
-  0%,
-  80%,
-  100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  40% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@-o-keyframes sk-bouncedelay {
-  0%,
-  80%,
-  100% {
-    -o-transform: scale(0);
-       transform: scale(0);
-  }
-  40% {
-    -o-transform: scale(1);
-       transform: scale(1);
-  }
-}
-
-@keyframes sk-bouncedelay {
-  0%,
-  80%,
-  100% {
-    -webkit-transform: scale(0);
-         -o-transform: scale(0);
-            transform: scale(0);
-  }
-  40% {
-    -webkit-transform: scale(1);
-         -o-transform: scale(1);
-            transform: scale(1);
-  }
 }
 
 .affiliate {

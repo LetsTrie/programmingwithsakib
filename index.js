@@ -13,6 +13,10 @@ app.get('/course/promotions', (req, res, next) => {
   res.render('promotions');
 });
 
+app.get('/testimonial', (req, res) => {
+  res.render('testimonials');
+})
+
 const crypto = require('crypto');
 
 const secret = '-__MY_PASSION__-';
