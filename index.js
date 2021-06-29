@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res, next) => {
   res.redirect('/blog/js/challenges');
-})
+});
 
 app.get('/course/promotions', (req, res, next) => {
   res.render('promotions');
@@ -15,7 +15,7 @@ app.get('/course/promotions', (req, res, next) => {
 
 app.get('/testimonial', (req, res) => {
   res.render('testimonials');
-})
+});
 
 const crypto = require('crypto');
 
@@ -33,7 +33,10 @@ app.get('/blog/js/challenges', (req, res, next) => {
   const spliced = data.slice((page - 1) * LIMIT, page * LIMIT);
 
   const disqus_URL = `http://www.programmingwithsakib.com/blog/js/challenges`;
-  const disqus_IDENTIFIER = crypto.createHmac('sha256', secret).update(disqus_URL).digest('hex');
+  const disqus_IDENTIFIER = crypto
+    .createHmac('sha256', secret)
+    .update(disqus_URL)
+    .digest('hex');
 
   res.render('index', {
     data: spliced,
@@ -46,7 +49,19 @@ app.get('/blog/js/challenges', (req, res, next) => {
     limit: LIMIT,
     url: '/blog/js/challenges',
     disqus_URL,
-    disqus_IDENTIFIER
+    disqus_IDENTIFIER,
+  });
+});
+
+app.get('/blog/js/when-you-should-not-use-arrow-function', (req, res, next) => {
+  const disqus_URL = `http://www.programmingwithsakib.com/blog/js/when-you-should-not-use-arrow-function`;
+  const disqus_IDENTIFIER = crypto
+    .createHmac('sha256', secret)
+    .update(disqus_URL)
+    .digest('hex');
+  res.render('noArrowFunction', {
+    disqus_URL,
+    disqus_IDENTIFIER,
   });
 });
 

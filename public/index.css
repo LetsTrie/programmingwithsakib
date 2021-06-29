@@ -407,18 +407,23 @@ hr {
   padding-bottom: 2rem;
 }
 
-.questionAnswerList .questionAnswer .question {
+.pointHeading,
+.question {
   font-size: 2.5rem;
   font-weight: bolder;
   color: #2d4059;
 }
 
-.questionAnswerList .questionAnswer .question span {
+.pointHeading span,
+.question span {
   font-size: 3rem;
-  color: #999;
   color: #384259;
   position: relative;
   z-index: 0;
+}
+
+.pointHeading span {
+  margin-bottom: 20px;
 }
 
 .answer {

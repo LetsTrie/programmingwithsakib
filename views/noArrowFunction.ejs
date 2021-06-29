@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/vendorTop'); %>
+    <link rel="stylesheet" href="/index.css" />
+    <title>JS Programming Challenges | PWS</title>
+    <style>
+      .shouldnot {
+        text-transform: uppercase;
+        text-shadow: 1px 1px #333;
+        color: #c70d3a;
+        font-size: 5.5rem;
+      }
+      main p {
+        font-size: 1.8rem;
+        color: #333;
+        line-height: 2;
+        padding-bottom: 5px;
+      }
+
+      u {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="proSakib">
+      <%- include('partials/navbar'); %>
+      <article class="challenges">
+        <main>
+          <div class="heading">
+            <h2 class="heading-text">
+              When <span class="shouldnot">not to use</span> Arrow Function
+            </h2>
+          </div>
+          <div class="questionAnswerList">
+            <div>
+              <p>
+                Arrow Function নিঃসন্দেহে খুবই পপুলার একটি ES6 Feature। আমরা
+                Standard Function Expression ব্যবহার না করে, সুন্দর এবং ক্লিন
+                কোড করার জন্য Arrow Function ব্যবহার করে থাকি। কিন্তু আমাদের
+                অবশ্যই এটা জেনে রাখতে হবে, কিছু কিছু ক্ষেত্রে Arrow Function
+                ব্যবহার করা উচিত না। যেমনঃ যে ফাংশনের ভিতরে “this” keyword,
+                “arguments” object রয়েছে বা যাকে “new” keyword এর মাধ্যমে কল করা
+                হয়েছে, সেসকল ক্ষেত্রে আমরা Arrow function ব্যবহার করবো না।
+              </p>
+              <p>এই ব্লগে আমরা এই বিষয়গুলো নিয়ে বিস্তারিত শিখবো।</p>
+            </div>
+            <div>
+              <div class="pointHeading">
+                <p>
+                  <span>1. Object Literals </span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  একটি উদাহারণ দিয়ে শুরু করি। <br />
+                  <b
+                    >আমরা “calculate” Object এর ভিতরে থাকা “numbers” অ্যারের
+                    ম্যাক্সিমাম ভ্যালুটা খুজে বের করতে চাই।
+                  </b>
+                  সেজন্য আমরা শুরুতে <i> <u>Arrow function</u> </i> ব্যবহার করে
+                  “getMax” নামে একটি মেথড তৈরি করলাম।
+                </p>
+                <code>
+                  <script src="https://gist.github.com/LetsTrie/87ddc4949776a85a233036299cf1df02.js"></script>
+                </code>
+
+                <p>
+                  এখানে আমরা যখন “this.numbers” এর মাধ্যমে “numbers” অ্যারেটা
+                  পেতে চাচ্ছি, তখন এটা আমাদেরকে “undefined” শো করতেছে। এবং শেষে
+                  আমরা “calculate.getMax()” এই মেথডটা কল করে Error পাচ্ছি।
+                </p>
+                <p>
+                  এর কারণ হল, আমরা যখন Arrow Function ব্যবহার করি, সেখানে “this”
+                  keyword- Global “window” object কে রেফার করে, তাই এখানে আমরা
+                  “this” প্রিন্ট করলে দেখতে পাবো, এটা window object শো করতেছে।
+                  এবং window object এর ভিতরে numbers নামে কোন ফিল্ড নেই, তাই
+                  this.numbers এখানে undefined শো করতেছে।
+                </p>
+                <p style="font-size: 22px; margin-bottom: 2px">
+                  <b>Solution:</b>
+                </p>
+                <p>Use Standard Function. It will give the expected result.</p>
+                <code>
+                  <script src="https://gist.github.com/LetsTrie/34a85dfe5816507799de4ea62c783871.js"></script>
+                </code>
+                <p>getMax function টা সংক্ষেপে এভাবেও লিখতে পারেন।</p>
+                <code>
+                  <script src="https://gist.github.com/LetsTrie/92ca7748fd11834ab7f84d3c8ecd9f92.js"></script>
+                </code>
+              </div>
+            </div>
+            <div>
+              <div class="pointHeading">
+                <p>
+                  <span>2. Object prototype </span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  Prototype এর ক্ষেত্রেও ব্যাপারটা একই। Use Standard Function
+                  Expression.
+                </p>
+                <code>
+                  <script src="https://gist.github.com/LetsTrie/fa67ec91260b06e35dec79cb8f52aa08.js"></script>
+                </code>
+              </div>
+            </div>
+            <div>
+              <div class="pointHeading">
+                <p>
+                  <span>3. Constructor Function </span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  Arrow function ব্যবহার করে Constructor function তৈরি করতে
+                  পারবেন না।
+                </p>
+                <code>
+                  <script src="https://gist.github.com/LetsTrie/d02099e183f0103b9840c352ca21c088.js"></script>
+                </code>
+              </div>
+            </div>
+            <div>
+              <div class="pointHeading">
+                <p>
+                  <span>4. Event handlers </span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  Event Handler গুলোতে আমরা Standard Function Expression ব্যবহার
+                  করবো।
+                </p>
+                <code>
+                  <script src="https://gist.github.com/LetsTrie/22a1d260f457613c0c0aba37776b19cf.js"></script>
+                </code>
+              </div>
+            </div>
+            <div>
+              <div class="pointHeading">
+                <p>
+                  <span>5. Function that uses “arguments” object </span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  একটি Function এর Arguments গুলো অবজেক্ট আকারে পেতে আমরা
+                  “arguments” ব্যবহার করে থাকি। শুধুমাত্র Standard Function এই
+                  আমরা এই অবজেক্টটি ব্যবহার করতে পারবো।
+                </p>
+                <code>
+                  <script src="https://gist.github.com/LetsTrie/767f2ca25f1958c43f3a81c96d054008.js"></script>
+                </code>
+              </div>
+            </div>
+            <div>
+              <div class="pointHeading">
+                <p>
+                  <span>Assignment </span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  একটি <b>“Counter”</b> Constructor Function তৈরি করুন। যেখানে
+                  একটি প্রপার্টি থাকবে “count” এবং তিনটি Method/Prototype থাকবে
+                  (i) up (ii) down (iii) reset. এই তিনটি মেথড ব্যবহার করে
+                  "count" এর ভ্যালু বাড়ানো কমানো বা রিসেট করা যাবে।
+                </p>
+                <p>
+                  যারা আমার JavaScript Course টি করছেন, তারা চাইলে Discord
+                  Server এ সল্যুশনটি দেখিয়ে নিতে পারেন।
+                </p>
+                <p style="margin-bottom: 30px; margin-top: 10px">ধন্যবাদ</p>
+              </div>
+            </div>
+          </div>
+        </main>
+        <div class="poster">
+          <div class="poster-info">
+            <div class="poster-header">
+              <h2>The Complete JavaScript Bootcamp</h2>
+            </div>
+            <div class="poster-info-desc">
+              <p>
+                Learn Modern JavaScript from the very beginning - all the way up
+                to JS Expert level with lots of programming challenges and real
+                world projects in Bangla
+              </p>
+            </div>
+            <p class="disqus_URL" hidden><%=disqus_URL%></p>
+            <p class="disqus_IDENTIFIER" hidden><%=disqus_IDENTIFIER%></p>
+            <div class="enroll">
+              <a
+                href="https://www.msbacademy.com/course/javascript-bootcamp/ref/808/?campaign=jsforlife"
+                target="_blank"
+              >
+                <i class="fa fa-shopping-cart"></i>&nbsp; Enroll Now!</a
+              >
+            </div>
+
+            <div class="discount">
+              <p>Use Coupon Code <b>PWS25</b> to get 25% discount!</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="disqus_custom_style">
+        <div id="disqus_thread"></div>
+      </div>
+      <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        var disqus_config = function () {
+          this.page.url = document.querySelector('.disqus_URL').innerText; // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier =
+            document.querySelector('.disqus_IDENTIFIER').innerText; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function () {
+          // DON'T EDIT BELOW THIS LINE
+          var d = document,
+            s = d.createElement('script');
+          s.src = 'https://programmingwithsakib.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    </div>
+    <script
+      id="dsq-count-scr"
+      src="//programmingwithsakib.disqus.com/count.js"
+      async
+    ></script>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f68e7b3ce4503bf"
+    ></script>
+  </body>
+  <%- include('partials/vendorBottom'); %>
+</html>
