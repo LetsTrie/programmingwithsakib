@@ -69,14 +69,16 @@
                 <p>
                   এখানে আমরা যখন “this.numbers” এর মাধ্যমে “numbers” অ্যারেটা
                   পেতে চাচ্ছি, তখন এটা আমাদেরকে “undefined” শো করতেছে। এবং শেষে
-                  আমরা “calculate.getMax()” এই মেথডটা কল করে Error পাচ্ছি।
+                  <b style="color: red">
+                    “calculate.getMax()” মেথডটা কল করে আমরা Error পাচ্ছি।
+                  </b>
                 </p>
                 <p>
                   এর কারণ হল, আমরা যখন Arrow Function ব্যবহার করি, সেখানে “this”
-                  keyword- Global “window” object কে রেফার করে, তাই এখানে আমরা
-                  “this” প্রিন্ট করলে দেখতে পাবো, এটা window object শো করতেছে।
-                  এবং window object এর ভিতরে numbers নামে কোন ফিল্ড নেই, তাই
-                  this.numbers এখানে undefined শো করতেছে।
+                  keyword- <b>Global “window” object</b> কে রেফার করে, তাই এখানে
+                  আমরা “this” প্রিন্ট করলে দেখতে পাবো, এটা window object শো
+                  করতেছে। এবং window object এর ভিতরে numbers নামে কোন ফিল্ড নেই,
+                  তাই <b>this.numbers এখানে undefined শো করতেছে।</b>
                 </p>
                 <p style="font-size: 22px; margin-bottom: 2px">
                   <b>Solution:</b>
@@ -119,7 +121,7 @@
                   পারবেন না।
                 </p>
                 <code>
-                  <script src="https://gist.github.com/LetsTrie/d02099e183f0103b9840c352ca21c088.js"></script>
+                  <script src="https://gist.github.com/LetsTrie/719abf15867fed0014de88b6b21db8ef.js"></script>
                 </code>
               </div>
             </div>
@@ -154,6 +156,26 @@
                 <code>
                   <script src="https://gist.github.com/LetsTrie/767f2ca25f1958c43f3a81c96d054008.js"></script>
                 </code>
+              </div>
+            </div>
+            <div>
+              <div class="pointHeading">
+                <p>
+                  <span>Summary </span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  Arrow Function এর নিজস্ব কোন “this” value বা “arguments”
+                  object নেই। তাই,
+                  <b>
+                    <u>Event Handlers</u>, <u>Object Methods</u>,
+                    <u>Prototype Methods</u>,
+                    <u>Functions that uses Arguments object</u>
+                  </b>
+                  এ সকল ক্ষেত্রে আমরা Arrow Function ব্যবহার না করে Standard
+                  Function Expression ব্যবহার করবো।
+                </p>
               </div>
             </div>
             <div>
